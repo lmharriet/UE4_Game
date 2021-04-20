@@ -7,11 +7,16 @@
 #include "shooterGameGameModeBase.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class SHOOTERGAME_API AshooterGameGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+public:
+
+	virtual void StartPlay() override;
+
+
 };
