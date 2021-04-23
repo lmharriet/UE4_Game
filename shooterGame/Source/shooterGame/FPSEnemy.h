@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/CapsuleComponent.h"
+#include "Blueprint/UserWidget.h"
 #include "FPSEnemy.generated.h"
 
 
@@ -30,9 +31,8 @@ public:
 	UPROPERTY(EditAnywhere)
 		UStaticMeshComponent* EnemyMesh;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere,BlueprintReadOnly)
 		int32 Hp;
-
 
 	UFUNCTION()
 		void OnOverlapBegin(class UPrimitiveComponent* MyComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp,

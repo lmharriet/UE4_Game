@@ -11,10 +11,8 @@ AFPSEnemy::AFPSEnemy()
 	
 	EnemyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("EbenyMesh"));
 	EnemyMesh->SetupAttachment(RootComponent);
-	
 	EnemyMesh->OnComponentBeginOverlap.AddDynamic(this, &AFPSEnemy::OnOverlapBegin);
 	
-
 	Hp = 20;
 }
 
