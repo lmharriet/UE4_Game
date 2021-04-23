@@ -17,7 +17,8 @@ AFPSProjectile::AFPSProjectile()
 
 	CollisionComponent->BodyInstance.SetCollisionProfileName(TEXT("Projectile"));
 	CollisionComponent->OnComponentHit.AddDynamic(this, &AFPSProjectile::OnHit);
-
+	
+	
 
 	//object speed setting
 	ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
@@ -27,6 +28,7 @@ AFPSProjectile::AFPSProjectile()
 	ProjectileMovementComponent->bRotationFollowsVelocity = true;
 	ProjectileMovementComponent->bShouldBounce = true;
 	ProjectileMovementComponent->Bounciness = 0.3f;
+
 
 	InitialLifeSpan = 3.0f;
 
