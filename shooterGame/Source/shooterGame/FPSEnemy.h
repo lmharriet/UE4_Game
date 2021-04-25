@@ -9,7 +9,7 @@
 #include "FPSEnemy.generated.h"
 
 
-UCLASS()
+UCLASS(BlueprintType,Blueprintable)
 class SHOOTERGAME_API AFPSEnemy : public AActor
 {
 	GENERATED_BODY()
