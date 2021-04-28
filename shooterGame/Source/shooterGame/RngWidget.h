@@ -15,18 +15,17 @@ class SHOOTERGAME_API URngWidget : public UUserWidget
 	GENERATED_BODY()
 
 protected:
-
-	virtual void NativeConstruct() override;
+	
+	void GenerateRandom();
 	UPROPERTY(meta = (BindWidget))
-		class UTextBlock* RandomLable;
-
-	UPROPERTY(meta = (BindWidget))
-		class UScaleBox* scaleBox;
+		class UTextBlock* RandomNumberLable;
 
 	UPROPERTY(meta = (BindWidget))
-		class UButton* button;
-
+		class UButton* GenerateButton;
 	UFUNCTION()
-		void ButtonClicked();
+		void OnGenerateButtonClicked();
+
+
+	 void NativeConstruct() override;
 
 };

@@ -3,18 +3,25 @@
 
 #include "RngWidget.h"
 #include "Components/TextBlock.h"
-#include "Components/ScaleBox.h"
 #include "Components/Button.h"
 void URngWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
 
-	RandomLable = NewObject<UTextBlock>();
-	scaleBox = NewObject<UScaleBox>();
-	button = NewObject<UButton>();
+	GenerateRandom();
+
+	GenerateButton->OnClicked.AddUniqueDynamic(this, &URngWidget::OnGenerateButtonClicked);
 }
 
-void URngWidget::ButtonClicked()
+void URngWidget::GenerateRandom()
 {
+	int32 RandomNumber = FMath::RandRange(0, 100);
+	RandomNumberLable->SetText(FText::AsNumber(RandomNumber));
+
+}
+
+void URngWidget::OnGenerateButtonClicked()
+{
+	GenerateRandom();
 
 }
