@@ -20,5 +20,5 @@ void UUMGTester::NativeConstruct()
 
 void UUMGTester::SetNewName()
 {
-	
+
 }
