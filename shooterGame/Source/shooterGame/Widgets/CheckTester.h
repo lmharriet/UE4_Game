@@ -5,8 +5,8 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "shooterGame/Widgets/PopupTester.h"
-#include "CheckTester.generated.h"
 
+#include "CheckTester.generated.h"
 /**
  * 
  */

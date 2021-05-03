@@ -18,4 +18,10 @@ void UCheckTester::NativeConstruct()
 
 void UCheckTester::SetVisibility()
 {
+	//when buy button is cliked
+	if (nullptr != m_PopUpform)
+	{
+		
+
+	}
 }

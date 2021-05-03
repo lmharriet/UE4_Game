@@ -9,9 +9,22 @@
 /**
  * 
  */
+
+class UButton;
+
+
 UCLASS()
 class SHOOTERGAME_API UPopupTester : public UUserWidget
 {
 	GENERATED_BODY()
 	
+		
+public :
+
+	UButton* m_YesBtn;
+	UButton* m_NoBtn;
+
+
+
+
 };
