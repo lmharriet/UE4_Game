@@ -6,6 +6,16 @@
 #include "Components/CanvasPanel.h"
 #include "Components/Button.h"
 
-void UCheckTester::CheckTestOfUMG()
+
+
+void UCheckTester::NativeConstruct()
+{
+	Super::NativeConstruct();
+	
+	//m_MainBtn->OnClicked;
+
+}
+
+void UCheckTester::SetVisibility()
 {
 }

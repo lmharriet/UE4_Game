@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "shooterGame/Widgets/PopupTester.h"
 #include "CheckTester.generated.h"
 
 /**
@@ -18,6 +19,8 @@ class SHOOTERGAME_API UCheckTester : public UUserWidget
 	GENERATED_BODY()
 public:
 		DECLARE_DELEGATE(FOnCheckTester);
+
+
 public:
 	UPROPERTY(EditAnywhere, meta =(BindWidget))
 	UButton* m_MainBtn;
@@ -28,6 +31,14 @@ public:
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
 	UCanvasPanel* m_Maincanvas;
 
-	void CheckTestOfUMG();
+	void SetVisibility();
 	
+protected:
+	
+	virtual void NativeConstruct() override;
+
+private:
+	UPopupTester* m_PopUpform = nullptr;
+	
+
 };
