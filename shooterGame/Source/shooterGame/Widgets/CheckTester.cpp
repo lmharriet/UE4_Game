@@ -8,20 +8,21 @@
 
 
 
+
+
 void UCheckTester::NativeConstruct()
 {
 	Super::NativeConstruct();
-	
-	//m_MainBtn->OnClicked;
 
+	//m_MainBtn->OnClicked;
+	m_PopUpform = Cast<UPopupTester>(GetWidgetFromName(FName("frmP_shopPopUp")));
+	if (nullptr != m_PopUpform)
+		m_PopUpform->InitWidget();
+
+	m_MainBtn->OnClicked.AddDynamic(this, &UCheckTester::ShowFrmP);
 }
 
-void UCheckTester::SetVisibility()
+void UCheckTester::ShowFrmP()
 {
-	//when buy button is cliked
-	if (nullptr != m_PopUpform)
-	{
-		
-
-	}
+	m_PopUpform->SetVisibility(ESlateVisibility::Visible);
 }

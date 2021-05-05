@@ -31,11 +31,13 @@ public:
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
 	UCanvasPanel* m_Maincanvas;
 
-	void SetVisibility();
 	
+	void ShowFrmP();
+
 protected:
 	
 	virtual void NativeConstruct() override;
+
 
 private:
 	UPopupTester* m_PopUpform = nullptr;

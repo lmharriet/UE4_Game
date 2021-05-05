@@ -20,11 +20,30 @@ class SHOOTERGAME_API UPopupTester : public UUserWidget
 	
 		
 public :
+	
+	DECLARE_DELEGATE_OneParam(FOnButtonClicked, uint8);
 
+
+public:
+
+	void InitWidget();
+	void ReleaseWidget();
+	virtual void SetVisibility(ESlateVisibility InVisibility) override;
+
+	
+	FOnButtonClicked* GetButtonEvent() { return ButtonCliked; }
+	void SetButtonEvent(FOnButtonClicked* Event) { ButtonCliked  = Event};
+
+
+	void SetBtn();
+private:
+
+	UPROPERTY(BlueprintReadWrite, meta =(BindWidget))
 	UButton* m_YesBtn;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 	UButton* m_NoBtn;
 
-
-
-
+	FOnButtonClicked* ButtonCliked; 
+	
 };
