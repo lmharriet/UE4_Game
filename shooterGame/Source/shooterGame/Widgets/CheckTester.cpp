@@ -7,9 +7,6 @@
 #include "Components/Button.h"
 
 
-
-
-
 void UCheckTester::NativeConstruct()
 {
 	Super::NativeConstruct();
@@ -19,7 +16,10 @@ void UCheckTester::NativeConstruct()
 	if (nullptr != m_PopUpform)
 		m_PopUpform->InitWidget();
 
-	m_MainBtn->OnClicked.AddDynamic(this, &UCheckTester::ShowFrmP);
+
+	m_MainBtn = Cast<UButton>(GetWidgetFromName(FName("m_MainBtn")));
+	if (nullptr != m_MainBtn)
+		m_MainBtn->OnClicked.AddDynamic(this, &UCheckTester::ShowFrmP);
 }
 
 void UCheckTester::ShowFrmP()

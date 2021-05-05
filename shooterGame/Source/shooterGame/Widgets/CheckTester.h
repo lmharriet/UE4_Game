@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "shooterGame/Widgets/PopupTester.h"
-
+#include "Components/SlateWrapperTypes.h"
 #include "CheckTester.generated.h"
 /**
  * 

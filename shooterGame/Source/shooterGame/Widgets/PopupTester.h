@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "Components/SlateWrapperTypes.h"
 #include "PopupTester.generated.h"
-
 /**
  * 
  */
@@ -32,16 +32,16 @@ public:
 
 	
 	FOnButtonClicked* GetButtonEvent() { return ButtonCliked; }
-	void SetButtonEvent(FOnButtonClicked* Event) { ButtonCliked  = Event};
+	void SetButtonEvent(FOnButtonClicked* Event) { ButtonCliked = Event; }
 
 
 	void SetBtn();
 private:
 
-	UPROPERTY(BlueprintReadWrite, meta =(BindWidget))
+	UPROPERTY(meta =(BindWidget))
 	UButton* m_YesBtn;
 
-	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	UPROPERTY(meta = (BindWidget))
 	UButton* m_NoBtn;
 
 	FOnButtonClicked* ButtonCliked; 
