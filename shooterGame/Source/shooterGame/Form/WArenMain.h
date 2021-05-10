@@ -49,4 +49,5 @@ private:
 
 	UWRewardPopup* frmP_RewardPop = nullptr;
 
+	int32 m_Timer = 20;
 };

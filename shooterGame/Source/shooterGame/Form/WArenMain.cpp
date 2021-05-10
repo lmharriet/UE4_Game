@@ -45,6 +45,18 @@ void UWArenMain::NativeTick(const FGeometry& MyGeometry, float InDeltaTime)
 {
 	Super::NativeTick(MyGeometry, InDeltaTime);
 	
+	if (frmP_RewardPop->GetActiveTimer() && m_Timer>0)
+	{
+		m_Timer--;
+		
+		if (m_Timer <= 0)
+		{
+			frmP_RewardPop->SetActiveTimer(false);
+			m_Timer = 20;
+			
+			frmP_RewardPop->ResetText();
+		}
+	}
 }
 
 void UWArenMain::ShowPopup()
@@ -54,4 +66,5 @@ void UWArenMain::ShowPopup()
 
 void UWArenMain::HidePopUp()
 {
+	frmP_RewardPop->SetVisibility(ESlateVisibility::Collapsed);
 }
