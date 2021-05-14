@@ -21,6 +21,7 @@ AFPSCharacter::AFPSCharacter()
 	FPSMesh->CastShadow = false;
 	
 	GetMesh()->SetOwnerNoSee(true);
+
 }
 
 // Called when the game starts or when spawned
@@ -31,6 +32,7 @@ void AFPSCharacter::BeginPlay()
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("We are using FPS Character!"));
 	}
+
 }
 
 // Called every frame
