@@ -32,6 +32,7 @@ void UWArenMain::InitWidget()
 		//delegate 
 	}
 	
+
 }
 
 void UWArenMain::ReleaseWidget()
