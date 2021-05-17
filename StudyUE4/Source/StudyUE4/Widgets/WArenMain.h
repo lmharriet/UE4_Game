@@ -45,8 +45,10 @@ public:
 
 private:
 	
+	UPROPERTY(meta=(BindWidget))
 	UButton* Bt_Season = nullptr;
 
+	UPROPERTY(meta=(BindWidget))
 	UWRewardPopup* frmP_RewardPop = nullptr;
 
 	int32 m_Timer = 20;
