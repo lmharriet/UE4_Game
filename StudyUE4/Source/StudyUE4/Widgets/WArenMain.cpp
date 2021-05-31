@@ -19,6 +19,8 @@ void UWArenMain::InitWidget()
 	{
 		frmP_RewardPop->InitWidget();
 		frmP_RewardPop->SetVisibility(ESlateVisibility::Collapsed);
+		frmP_RewardPop->SetRewardEvent(UWRewardPopup::FOnClickRewardEvent::
+			CreateUObject(this, &UWArenMain::RewardByResult));
 	}
 	else
 	{
@@ -68,4 +70,9 @@ void UWArenMain::ShowPopup()
 void UWArenMain::HidePopUp()
 {
 	frmP_RewardPop->SetVisibility(ESlateVisibility::Collapsed);
+}
+
+void UWArenMain::RewardByResult()
+{
+
 }

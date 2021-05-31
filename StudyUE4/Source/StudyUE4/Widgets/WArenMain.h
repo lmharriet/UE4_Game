@@ -26,8 +26,8 @@ public:
 
 	enum class EPopUpList : uint8
 	{
-		E_NONE=0,
-		E_MAIN =1,
+		E_NONE = 0,
+		E_MAIN = 1,
 		E_REWARD,
 	};
 
@@ -38,18 +38,20 @@ public:
 
 	virtual void NativeTick(const FGeometry& MyGeometry, float InDeltaTime) override;
 
-	UFUNCTION(BlueprintCallable)
-	void ShowPopup();
-	UFUNCTION(BlueprintCallable)
-	void HidePopUp();
-
 private:
-	
-	UPROPERTY(meta=(BindWidget))
-	UButton* Bt_Season = nullptr;
+	UFUNCTION(BlueprintCallable)
+		void ShowPopup();
+	UFUNCTION(BlueprintCallable)
+		void HidePopUp();
+	UFUNCTION(BlueprintCallable)
+		void RewardByResult();
+private:
 
-	UPROPERTY(meta=(BindWidget))
-	UWRewardPopup* frmP_RewardPop = nullptr;
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+		UButton* Bt_Season = nullptr;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+		UWRewardPopup* frmP_RewardPop = nullptr;
 
 	int32 m_Timer = 20;
 };

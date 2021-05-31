@@ -11,6 +11,7 @@
 /**
  *
  */
+
 class UButton;
 class UTextBlock;
 
@@ -19,6 +20,8 @@ class STUDYUE4_API UWRewardPopup : public UWFormBase
 {
 	GENERATED_BODY()
 
+public:
+	DECLARE_DELEGATE(FOnClickRewardEvent);
 
 public:
 
@@ -28,18 +31,25 @@ public:
 	bool GetActiveTimer() { return bActiveTimer; }
 	void SetActiveTimer(bool bTimerState) { bActiveTimer = bTimerState; }
 	void ResetText();
+	void SetRewardEvent(FOnClickRewardEvent InRewardEvent) { m_ClickReward = InRewardEvent; }
 public:
 	UFUNCTION()
 		void CloseTap();
-
 	UFUNCTION()
 		void GetReward();
-	
+
+protected:
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+		UButton* Bt_CancleBt = nullptr; //to close
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+		UButton* Bt_Reward = nullptr; //to get reward
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+		UTextBlock* Text_Reward_Line = nullptr;
 
 private:
-	UButton* Bt_CancleBt= nullptr; //to close
-	UButton* Bt_Reward = nullptr; //to get reward
-	UTextBlock* Text_Reward_Line= nullptr;
 
 	bool bActiveTimer = false;
+
+	FOnClickRewardEvent m_ClickReward;
+
 };

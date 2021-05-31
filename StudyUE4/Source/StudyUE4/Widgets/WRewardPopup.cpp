@@ -11,13 +11,13 @@ void UWRewardPopup::InitWidget()
 {
 	WIDGETBIND(UButton, Bt_CancleBt);
 
-	if (nullptr != Bt_CancleBt)
+	if (nullptr != Bt_CancleBt&& Bt_CancleBt->IsValidLowLevel()==true)
 	{
 		Bt_CancleBt->OnClicked.AddDynamic(this, &UWRewardPopup::CloseTap);
 	}
 
 	WIDGETBIND(UButton, Bt_Reward);
-	if (nullptr != Bt_Reward)
+	if (nullptr != Bt_Reward && Bt_Reward->IsValidLowLevel()==true)
 	{
 		Bt_Reward->OnClicked.AddDynamic(this, &UWRewardPopup::GetReward);
 	}
@@ -43,10 +43,8 @@ void UWRewardPopup::CloseTap()
 
 void UWRewardPopup::GetReward()
 {
-	Text_Reward_Line->SetText(FText::FromString("Didn't get any reward")); 
-
 	bActiveTimer = true;
-
+	m_ClickReward.ExecuteIfBound();
 }
 
 void UWRewardPopup::ResetText()
