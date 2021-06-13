@@ -45,7 +45,7 @@ private:
 		void HidePopUp();
 	UFUNCTION(BlueprintCallable)
 		void RewardByResult();
-private:
+protected:
 
 	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
 		UButton* Bt_Season = nullptr;
