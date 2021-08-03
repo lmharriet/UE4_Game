@@ -13,5 +13,17 @@ UCLASS()
 class NOIR_API UWSSlotBase : public UUserWidget
 {
 	GENERATED_BODY()
-	
+
+public:
+
+	virtual void InitializeWidget() {};
+	virtual void EventConnect() {};
+	virtual void ReleaseWidget() {}
+
+protected:
+
+private:
+
+public:
+
 };
